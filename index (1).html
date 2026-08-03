@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 16th Birthday!</title>
+
+<!-- ============================================================
+  EASY EDITS: search for "CHAMP" and swap in your brother's real
+  name. Search for "Aug 04" if his birthday isn't today.
+=============================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --pink: #FF4FA0;
+    --orange: #FF8A3D;
+    --yellow: #FFD23F;
+    --purple: #7C4DFF;
+    --teal: #00C2A8;
+    --blue: #3D8BFF;
+    --ink: #2A1B3D;
+    --paper: #FFFFFF;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background: linear-gradient(160deg, #FF4FA0 0%, #FF8A3D 28%, #FFD23F 52%, #7C4DFF 78%, #3D8BFF 100%);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: 'Fredoka', sans-serif;
+    min-height: 100vh;
+    padding: 50px 18px 110px;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* floating balloons background */
+  .balloon{
+    position: fixed;
+    font-size: 42px;
+    opacity: 0.55;
+    animation: floaty 7s ease-in-out infinite;
+    pointer-events:none;
+    z-index: 0;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15));
+  }
+  .b1{ top: 8%; left: 6%; animation-delay: 0s; }
+  .b2{ top: 20%; right: 8%; animation-delay: 1.2s; font-size: 34px; }
+  .b3{ bottom: 12%; left: 4%; animation-delay: 2.4s; font-size: 50px; }
+  .b4{ bottom: 22%; right: 6%; animation-delay: 0.6s; font-size: 30px; }
+  .b5{ top: 45%; left: 2%; animation-delay: 1.8s; font-size: 26px; }
+  @keyframes floaty{
+    0%,100%{ transform: translateY(0) rotate(-4deg); }
+    50%{ transform: translateY(-22px) rotate(4deg); }
+  }
+
+  .wrap{ max-width: 780px; margin: 0 auto; position: relative; z-index: 2; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background: var(--paper);
+    border-radius: 28px;
+    padding: 44px 30px 36px;
+    text-align: center;
+    box-shadow: 0 24px 60px rgba(42,27,61,0.35);
+    position: relative;
+    transform: rotate(-1deg);
+    border: 6px solid var(--ink);
+  }
+
+  .confetti-strip{
+    display:flex;
+    justify-content:center;
+    gap: 10px;
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+
+  .eyebrow{
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, var(--pink), var(--purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+  }
+
+  .headline{
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: clamp(38px, 9vw, 62px);
+    line-height: 1.05;
+    color: var(--ink);
+  }
+  .headline .sweet16{
+    display:inline-block;
+    background: linear-gradient(90deg, var(--pink), var(--orange), var(--yellow));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: clamp(56px, 14vw, 96px);
+  }
+
+  .name{
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: clamp(30px, 7vw, 44px);
+    color: var(--purple);
+    margin-top: 4px;
+  }
+
+  .subline{
+    margin-top: 16px;
+    font-size: 17px;
+    color: var(--ink);
+    opacity: 0.75;
+    max-width: 44ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .badge-row{
+    margin-top: 26px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 10px;
+  }
+  .badge{
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    color: var(--paper);
+    letter-spacing: .5px;
+  }
+  .badge:nth-child(1){ background: var(--pink); }
+  .badge:nth-child(2){ background: var(--teal); }
+  .badge:nth-child(3){ background: var(--blue); }
+  .badge:nth-child(4){ background: var(--orange); }
+
+  /* ---------- SECTION LABELS ---------- */
+  .section{ margin-top: 60px; }
+  .section-head{
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .section-head .tag{
+    display:inline-block;
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--paper);
+    background: rgba(255,255,255,0.25);
+    border: 2px solid var(--paper);
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+  .section-head h2{
+    font-family:'Baloo 2', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--paper);
+    text-shadow: 0 3px 0 rgba(0,0,0,0.15);
+  }
+
+  /* ---------- QUOTE CARDS ---------- */
+  .cards{
+    display:grid;
+    gap: 18px;
+  }
+  @media(min-width: 620px){
+    .cards{ grid-template-columns: 1fr 1fr; }
+  }
+  .card{
+    background: var(--paper);
+    border-radius: 20px;
+    padding: 24px 22px;
+    border: 5px solid var(--ink);
+    box-shadow: 7px 7px 0 rgba(0,0,0,0.18);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .card:nth-child(1){ border-color: var(--pink); }
+  .card:nth-child(2){ border-color: var(--teal); }
+  .card:nth-child(3){ border-color: var(--blue); }
+  .card:nth-child(4){ border-color: var(--orange); }
+  .card:hover{
+    transform: translateY(-5px) rotate(-1deg);
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.22);
+  }
+  .card p{
+    font-size: 17px;
+    line-height: 1.55;
+    font-style: italic;
+    font-weight: 500;
+  }
+  .card .mark{
+    margin-top: 12px;
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--purple);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ---------- UNLOCKS ---------- */
+  .unlocks{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .unlock{
+    background: var(--paper);
+    border-radius: 16px;
+    padding: 18px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    border-left: 8px solid var(--yellow);
+    box-shadow: 5px 5px 0 rgba(0,0,0,0.12);
+  }
+  .unlock:nth-child(1){ border-left-color: var(--pink); }
+  .unlock:nth-child(2){ border-left-color: var(--teal); }
+  .unlock:nth-child(3){ border-left-color: var(--blue); }
+  .unlock:nth-child(4){ border-left-color: var(--purple); }
+  .unlock:nth-child(5){ border-left-color: var(--orange); }
+  .unlock:nth-child(6){ border-left-color: var(--yellow); }
+  .unlock::before{
+    content: "\2728 UNLOCKED";
+    display:block;
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--purple);
+    margin-bottom: 8px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .closing{
+    margin-top: 70px;
+    text-align: center;
+    background: var(--paper);
+    border-radius: 24px;
+    padding: 40px 26px;
+    border: 6px solid var(--ink);
+    transform: rotate(0.6deg);
+  }
+  .closing .big{
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: clamp(30px, 7vw, 48px);
+    color: var(--ink);
+  }
+  .closing .big .accent{
+    background: linear-gradient(90deg, var(--pink), var(--orange));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .closing p{
+    margin-top: 14px;
+    font-size: 16px;
+    opacity: .8;
+    max-width: 48ch;
+    margin-left: auto; margin-right: auto;
+  }
+  .closing .from{
+    margin-top: 22px;
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--purple);
+  }
+
+  #confetti-canvas{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; animation: none !important; }
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline: 3px solid var(--ink);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<span class="balloon b1">🎈</span>
+<span class="balloon b2">🎉</span>
+<span class="balloon b3">🎈</span>
+<span class="balloon b4">🎁</span>
+<span class="balloon b5">🎈</span>
+
+<canvas id="confetti-canvas"></canvas>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="confetti-strip">🎂 🎉 🎈 🎊 🎁</div>
+    <div class="eyebrow">It's Officially Party Time</div>
+    <div class="headline">HAPPY <span class="sweet16">16TH</span><br>BIRTHDAY</div>
+    <div class="name">CHAMP 🎊</div>
+    <p class="subline">Sixteen years of pure chaos, laughs, and love — and this is just the beginning. Here's to the best year yet!</p>
+    <div class="badge-row">
+      <span class="badge">Aug 04, 2026</span>
+      <span class="badge">Level Up: 16</span>
+      <span class="badge">Main Character Era</span>
+      <span class="badge">From Your Bhai ❤️</span>
+    </div>
+  </div>
+
+  <!-- QUOTES -->
+  <div class="section">
+    <div class="section-head">
+      <span class="tag">For You</span>
+      <h2>Words for Sixteen</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <p>"Sixteen isn't just a number — it's the year the world starts asking what you think, instead of just telling you what to do."</p>
+        <div class="mark">🎈 with love</div>
+      </div>
+      <div class="card">
+        <p>"You don't have to have it all figured out at 16. Just keep showing up, curious and a little braver than yesterday."</p>
+        <div class="mark">🎈 with love</div>
+      </div>
+      <div class="card">
+        <p>"Every great story has a chapter where the character finally steps into their own spotlight. Welcome to yours."</p>
+        <div class="mark">🎈 with love</div>
+      </div>
+      <div class="card">
+        <p>"The best part of growing up isn't getting older — it's becoming more you with every year."</p>
+        <div class="mark">🎈 with love</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UNLOCKS -->
+  <div class="section">
+    <div class="section-head">
+      <span class="tag">Level 16</span>
+      <h2>New Unlocks</h2>
+    </div>
+    <div class="unlocks">
+      <div class="unlock">Official "ask me, I probably have an opinion" privileges.</div>
+      <div class="unlock">One extra hour of staying up, no questions asked (okay, maybe a few).</div>
+      <div class="unlock">Bigger snack authority in the kitchen.</div>
+      <div class="unlock">Permanent upgrade from "chota bhai" to "the guy with good taste in everything."</div>
+      <div class="unlock">Full clearance to embarrass your big brother in public. Use wisely.</div>
+      <div class="unlock">Lifetime access to being cheered on by your family, no expiry date.</div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="big">Have the <span class="accent">best</span> year yet! 🎉</div>
+    <p>Here's to sixteen — loud, funny, a little chaotic, and completely yours. Love you, and I'm always in your corner.</p>
+    <div class="from">— Your Big Brother</div>
+  </div>
+
+</div>
+
+<script>
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H;
+  function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const colors = ['#FF4FA0', '#FF8A3D', '#FFD23F', '#7C4DFF', '#00C2A8', '#3D8BFF'];
+  let pieces = [];
+
+  function spawn(n){
+    for(let i=0;i<n;i++){
+      pieces.push({
+        x: Math.random()*W,
+        y: -20 - Math.random()*H*0.6,
+        r: 5 + Math.random()*6,
+        c: colors[Math.floor(Math.random()*colors.length)],
+        vy: 1.5 + Math.random()*3,
+        vx: -1.5 + Math.random()*3,
+        rot: Math.random()*360,
+        vr: -5 + Math.random()*10
+      });
+    }
+  }
+
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    pieces.forEach(p=>{
+      p.y += p.vy; p.x += p.vx; p.rot += p.vr;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot * Math.PI/180);
+      ctx.fillStyle = p.c;
+      ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*0.7);
+      ctx.restore();
+    });
+    pieces = pieces.filter(p => p.y < H + 30);
+    if(pieces.length > 0){
+      requestAnimationFrame(tick);
+    } else {
+      ctx.clearRect(0,0,W,H);
+    }
+  }
+
+  if(!prefersReduced){
+    spawn(180);
+    tick();
+    setInterval(()=>{ spawn(60); if(pieces.length && pieces.length < 400) tick(); }, 4000);
+  }
+</script>
+
+</body>
+</html>
